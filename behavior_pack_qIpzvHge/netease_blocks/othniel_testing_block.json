@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "netease:on_stand_on":{
+                "send_python_event": true
+            }
+        },
+        "description": {
+            "identifier": "othniel:testing_block",
+            "register_to_creative_menu": true
+        }
+    }
+}

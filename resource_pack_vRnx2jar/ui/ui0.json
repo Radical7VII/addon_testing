@@ -1,0 +1,38 @@
+{
+   "main" : {
+      "controls" : [
+         {
+            "image" : {
+               "clip_direction" : "left",
+               "clip_ratio" : 0.0,
+               "layer" : 1,
+               "max_size" : [ 0, 0 ],
+               "min_size" : [ 0, 0 ],
+               "offset" : [ 0, 0 ],
+               "size" : [ 54, 36 ],
+               "texture" : "textures/ui/SplatShoot_Aim",
+               "type" : "image",
+               "uv" : [ 0, 0 ],
+               "uv_size" : [ 0, 0 ]
+            }
+         },
+         {
+            "image(0)" : {
+               "clip_direction" : "left",
+               "clip_ratio" : 0.0,
+               "layer" : 1,
+               "max_size" : [ 0, 0 ],
+               "min_size" : [ 0, 0 ],
+               "offset" : [ 0, 0 ],
+               "size" : [ 35, "100.0%x+-10.0px" ],
+               "texture" : "textures/ui/aim_default",
+               "type" : "image",
+               "uv" : [ 0, 0 ],
+               "uv_size" : [ 0, 0 ]
+            }
+         }
+      ],
+      "type" : "screen"
+   },
+   "namespace" : "ui0"
+}

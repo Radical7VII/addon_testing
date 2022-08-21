@@ -1,0 +1,22 @@
+{
+    "description": {
+        "file_type": "bind",
+        "model": "inkSquid3_ascii",
+        "model_type": "model"
+    },
+    "editor": {
+        "show": {
+            "default": true
+        }
+    },
+    "model": {
+        "inkSquid3_ascii": {
+            "animation": {},
+            "animation_speed": {},
+            "bind": {
+                "default": {}
+            }
+        }
+    },
+    "version": "1.1.0"
+}

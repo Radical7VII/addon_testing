@@ -1,0 +1,14 @@
+{
+    "splt:bullet_shoot": {
+        "max_distance": 16.0,
+        "sounds": [
+            "sounds/splattershot_shoot_2"
+        ]
+    },
+    "splt:bullet_hit": {
+        "max_distance": 16.0,
+        "sounds": [
+            "sounds/splattershot_hit"
+        ]
+    }
+}

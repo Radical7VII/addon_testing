@@ -1,0 +1,12 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "othniel:brah": {
+            "textures": "textures/blocks/brah"
+        },
+        "othniel:iron_mesh": {
+            "textures": "textures/blocks/iron_mesh"
+        }
+    },
+    "texture_name": "atlas.terrain"
+}

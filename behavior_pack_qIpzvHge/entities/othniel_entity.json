@@ -1,0 +1,55 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0.1,
+                "width": 0.2
+            },
+            "minecraft:persistent": {
+
+            },
+            "minecraft:projectile": {
+                "anchor": 2,
+                "gravity": 0,
+                "hit_sound": "bow.hit",
+                "inertia": 1,
+                "offset": [
+                    0.0,
+                    3.0,
+                    3.0
+                ],
+                "on_hit": {
+                    "remove_on_hit": {
+
+                    }
+                },
+                "power": 0.5,
+                "reflect_on_hurt": true,
+                "semi_random_diff_damage": false,
+                "uncertainty_base": 0.0
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "bullet"
+                ]
+            },
+            "netease:custom_entity_type": {
+                "value": "projectile_entity"
+            }
+        },
+        "description": {
+            "identifier": "othniel:entity",
+            "is_experimental": false,
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "minecraft:physics": {
+
+        },
+        "minecraft:pushable": {
+            "is_pushable": false,
+            "is_pushable_by_piston": false
+        }
+    }
+}

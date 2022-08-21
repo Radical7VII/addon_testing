@@ -1,0 +1,17 @@
+{
+    "Arena.Component.Namespace": "othniel",
+    "FirstTabSetting": 1,
+    "ShortItemSettings": [
+        "resource_pack_vRnx2jar\\ui",
+        "behavior_pack_qIpzvHge\\Presets",
+        "behavior_pack_qIpzvHge\\Parts",
+        "behavior_pack_qIpzvHge\\BoxData",
+        "resource_pack_vRnx2jar\\effects",
+        "resource_pack_vRnx2jar\\models",
+        "resource_pack_vRnx2jar\\textures"
+    ],
+    "Uluru.autoLayerDict": {
+
+    },
+    "Uluru.checkSuspectOldUI": true
+}

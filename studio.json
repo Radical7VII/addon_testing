@@ -1,0 +1,48 @@
+{
+    "Account": "sdzxcf@126.com",
+    "AssertCacheDir": "D:\\MCStudioDownload\\EngineAssert",
+    "BlockNums": [
+        0,
+        0
+    ],
+    "BornPoint": [
+        0,
+        0,
+        0
+    ],
+    "CreateNew": true,
+    "CreateVersion": "2.2.0.97771",
+    "DCWebUrl": "https://x19apigatewayexpr.nie.netease.com",
+    "EditAddOnPaths": [
+
+    ],
+    "EditLogFilePath": "D:\\MCStudioDownload\\work\\editor\\edit.log",
+    "EditMaterialPaths": [
+
+    ],
+    "EditName": "代码测试",
+    "EditType": 2,
+    "EditVersion": "2.2.0.118322",
+    "EditorResourcePackPath": "D:\\Program Files (x86)\\Netease\\MCStudio\\data\\inner_res",
+    "ElkUrl": "https://x19mclexpr.nie.netease.com/client-log",
+    "GameType": 1,
+    "Id": "78f4eba6de694af88c4f52cd10d8d308",
+    "IsMap": false,
+    "NewEditCount": 29,
+    "OldComponents": [
+
+    ],
+    "OldEditCount": 0,
+    "SaveBackAddOnPath": "D:\\MCStudioDownload\\work\\sdzxcf@126.com\\Cpp\\AddOn\\78f4eba6de694af88c4f52cd10d8d308",
+    "SaveBackMapPath": "",
+    "Seed": "",
+    "ServerName": "EXPR",
+    "ShowGpuDriverTips": false,
+    "ShowGuide": false,
+    "Source": "空白附加包",
+    "StudioPort": 12797,
+    "StudioTempPath": "D:\\MCStudioDownload\\temp\\editorTemp",
+    "UserId": "46325",
+    "UserName": "Othniel",
+    "WorldType": 1
+}

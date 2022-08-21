@@ -1,0 +1,14 @@
+{
+    "format_version": [
+        1,
+        1,
+        0
+    ],
+    "othniel:iron_mesh": {
+        "netease_model": "othniel:iron_mesh",
+        "textures": "othniel:iron_mesh"
+    },
+    "othniel:testing_block": {
+        "textures": "othniel:brah"
+    }
+}

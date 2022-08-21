@@ -1,0 +1,121 @@
+{
+    "format_version": "1.13.0",
+    "netease:block_geometry": {
+        "bones": [
+            {
+                "cubes": [
+                    {
+                        "origin": [
+                            -16,
+                            15,
+                            0
+                        ],
+                        "pivot": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "size": [
+                            16,
+                            1,
+                            16
+                        ],
+                        "uv": {
+                            "down": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    16
+                                ]
+                            },
+                            "east": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    1
+                                ]
+                            },
+                            "north": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    1
+                                ]
+                            },
+                            "south": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    1
+                                ]
+                            },
+                            "up": {
+                                "texture": 0,
+                                "uv": [
+                                    16,
+                                    16
+                                ],
+                                "uv_size": [
+                                    -16,
+                                    -16
+                                ]
+                            },
+                            "west": {
+                                "texture": 0,
+                                "uv": [
+                                    0,
+                                    0
+                                ],
+                                "uv_size": [
+                                    16,
+                                    1
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "name": "unknown_bone",
+                "pivot": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ],
+        "description": {
+            "identifier": "othniel:iron_mesh",
+            "item_texture": "othniel:iron_mesh",
+            "textures": [
+                "othniel:iron_mesh"
+            ],
+            "textures_descriptions": [
+                {
+                    "length": 16,
+                    "width": 16
+                }
+            ],
+            "use_ao": false
+        }
+    }
+}

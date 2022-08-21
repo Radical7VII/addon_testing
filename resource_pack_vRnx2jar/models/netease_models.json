@@ -1,0 +1,108 @@
+{
+    "Player_steve": {
+        "animation": {
+            "idle": "animation/Player_steve_animation_idle.json",
+            "jump": "animation/Player_steve_animation_jump.json",
+            "walk": "animation/Player_steve_animation_walk.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/Player_steve_mesh.json",
+        "skeleton": "skeleton/Player_steve_skeleton.json"
+    },
+    "SpltSquid": {
+        "dy_load": false,
+        "mesh": "mesh/SpltSquid_mesh.json",
+        "skeleton": "skeleton/SpltSquid_skeleton.json"
+    },
+    "TestingSkin": {
+        "animation": {
+            "roll": "animation/TestingSkin_animation_roll.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/TestingSkin_mesh.json",
+        "skeleton": "skeleton/TestingSkin_skeleton.json"
+    },
+    "coordinate": {
+        "animation": {
+            "idle": "animation/coordinate_animation_idle.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/coordinate_mesh.json",
+        "skeleton": "skeleton/coordinate_skeleton.json"
+    },
+    "datiangou": {
+        "animation": {
+            "attack": "animation/datiangou_animation_attack.json",
+            "datiangou_stand": "animation/datiangou_animation_datiangou_stand.json",
+            "die": "animation/datiangou_animation_die.json",
+            "fengxi": "animation/datiangou_animation_fengxi.json",
+            "fengxi2": "animation/datiangou_animation_fengxi2.json",
+            "run": "animation/datiangou_animation_run.json",
+            "spell-ready": "animation/datiangou_animation_spell-ready.json",
+            "spell-star": "animation/datiangou_animation_spell-star.json",
+            "spell1-fengxi": "animation/datiangou_animation_spell1-fengxi.json",
+            "spell1-fengxi-2": "animation/datiangou_animation_spell1-fengxi-2.json",
+            "spell2": "animation/datiangou_animation_spell2.json",
+            "stand": "animation/datiangou_animation_stand.json",
+            "walk": "animation/datiangou_animation_walk.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/datiangou_mesh.json",
+        "skeleton": "skeleton/datiangou_skeleton.json"
+    },
+    "datiangou_shadow": {
+        "animation": {
+            "attack": "animation/datiangou_shadow_animation_attack.json",
+            "datiangou_stand": "animation/datiangou_shadow_animation_datiangou_stand.json",
+            "die": "animation/datiangou_shadow_animation_die.json",
+            "fengxi": "animation/datiangou_shadow_animation_fengxi.json",
+            "fengxi2": "animation/datiangou_shadow_animation_fengxi2.json",
+            "run": "animation/datiangou_shadow_animation_run.json",
+            "spell-ready": "animation/datiangou_shadow_animation_spell-ready.json",
+            "spell-star": "animation/datiangou_shadow_animation_spell-star.json",
+            "spell1-fengxi": "animation/datiangou_shadow_animation_spell1-fengxi.json",
+            "spell1-fengxi-2": "animation/datiangou_shadow_animation_spell1-fengxi-2.json",
+            "spell2": "animation/datiangou_shadow_animation_spell2.json",
+            "stand": "animation/datiangou_shadow_animation_stand.json",
+            "walk": "animation/datiangou_shadow_animation_walk.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/datiangou_shadow_mesh.json",
+        "skeleton": "skeleton/datiangou_shadow_skeleton.json"
+    },
+    "inkSquid": {
+        "animation": {
+            "walk": "animation/inkSquid_animation_walk.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/inkSquid_mesh.json",
+        "skeleton": "skeleton/inkSquid_skeleton.json"
+    },
+    "inkSquid2": {
+        "dy_load": true,
+        "mesh": "mesh/inkSquid2_mesh.json",
+        "skeleton": "skeleton/inkSquid2_skeleton.json"
+    },
+    "inkSquid3": {
+        "animation": {
+            "run": "animation/inkSquid3_animation_run.json",
+            "walk": "animation/inkSquid3_animation_walk.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/inkSquid3_mesh.json",
+        "skeleton": "skeleton/inkSquid3_skeleton.json"
+    },
+    "inkSquid3_ascii": {
+        "animation": {
+            "run": "animation/inkSquid3_ascii_animation_run.json"
+        },
+        "dy_load": false,
+        "mesh": "mesh/inkSquid3_ascii_mesh.json",
+        "skeleton": "skeleton/inkSquid3_ascii_skeleton.json"
+    },
+    "splattershot": {
+        "dy_load": false,
+        "mesh": "mesh/splattershot_mesh.json",
+        "skeleton": "skeleton/splattershot_skeleton.json"
+    }
+}

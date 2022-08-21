@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "vanilla",
+    "texture_data": {
+        "othniel:testing_item": {
+            "textures": "textures/items/apple"
+        }
+    },
+    "texture_name": "atlas.items"
+}

@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10",
+    "minecraft:item": {
+        "components": {
+            "minecraft:icon": "othniel:testing_item"
+        },
+        "description": {
+            "category": "Items",
+            "identifier": "othniel:testing_item",
+            "register_to_create_menu": true
+        }
+    }
+}

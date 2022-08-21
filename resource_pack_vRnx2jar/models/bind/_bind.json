@@ -1,0 +1,22 @@
+{
+    "description": {
+        "file_type": "bind",
+        "model": "",
+        "model_type": ""
+    },
+    "editor": {
+        "show": {
+            "default": true
+        }
+    },
+    "model": {
+        "": {
+            "animation": {},
+            "animation_speed": {},
+            "bind": {
+                "default": {}
+            }
+        }
+    },
+    "version": "1.1.0"
+}

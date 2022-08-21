@@ -1,0 +1,55 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "minecraft:map_color": {
+                "color": "#52595b"
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.79,
+                        0.0
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.79,
+                        0.0
+                    ]
+                }
+            },
+            "netease:pathable": {
+                "value": true
+            },
+            "netease:render_layer": {
+                "value": "alpha"
+            },
+            "netease:solid": {
+                "value": false
+            },
+            "netease:on_stand_on": {
+                "send_python_event": true
+            }
+        },
+        "description": {
+            "identifier": "othniel:iron_mesh",
+            "register_to_creative_menu": true
+        }
+    }
+}
