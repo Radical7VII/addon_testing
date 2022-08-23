@@ -25,18 +25,32 @@ class CodingTestClientSystem(ClientSystem):
         self.shoot_pit = -20
         self.shoot_power = 3.9
         self.shoot_gravity = 1
+        self.player_moving = False
 
     def ListenEvents(self):
+        """监听网易事件"""
+        self.listen_custom_event()
         self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
                             'UiInitFinished', self, self.OnUiInitFinished)
         self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
                             'OnKeyPressInGame', self, self.OnPress)
+        self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
+                            'OnKeyPressInGame', self, self.on_entity_inside)
         self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
                             'OnStandOnBlockClientEvent', self, self.OnStandBlock)
         self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
                             'WalkAnimBeginClientEvent', self, self.OnWalkBegin)
         self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
                             'WalkAnimEndClientEvent', self, self.OnWalkEnd)
+        self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
+                            'OnEntityInsideBlockClientEvent', self, self.on_entity_inside)
+        self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
+                            'OnClientPlayerStartMove', self, self.set_moving)
+        self.ListenForEvent(clientApi.GetEngineNamespace(), clientApi.GetEngineSystemName(),
+                            'OnClientPlayerStopMove', self, self.set_moving_false)
+
+    def listen_custom_event(self):
+        """监听自定义事件"""
         self.ListenForEvent(modConfig.ModName, modConfig.ServerSystemName,
                             'bullet_hit', self, self.OnHit)
         self.ListenForEvent(modConfig.ModName, modConfig.ServerSystemName,
@@ -56,11 +70,13 @@ class CodingTestClientSystem(ClientSystem):
         clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetCameraOffset((0, 0.46, 0))
         clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetFov(63)
 
-        # 创建序列帧特效
-        # self.create_sfx()
-
     def create_sfx(self, pos, sfx):
-        """创建序列帧特效"""
+        """
+        创建序列帧特效
+        :param pos: 特效创建位置
+        :param sfx: 特效名称
+        :return:
+        """
         frameEntityId = self.CreateEngineSfxFromEditor("effects/%s.json" % sfx)
 
         frameAniTransComp = clientApi.GetEngineCompFactory().CreateFrameAniTrans(frameEntityId)
@@ -102,6 +118,7 @@ class CodingTestClientSystem(ClientSystem):
         """UI初始化"""
         logger.info('[warn] UI init')
         playerId = clientApi.GetLocalPlayerId()
+        # 创建一个绑定在玩家头顶的UI
         print clientApi.RegisterUI(modConfig.ModName, modConfig.UIName, modConfig.UICls, 'ui0.main')
         print clientApi.CreateUI(
             modConfig.ModName,
@@ -121,6 +138,7 @@ class CodingTestClientSystem(ClientSystem):
         self.NotifyToServer('ActionEvent', args)
 
     def create_virtual_world(self, data):
+        """负责监听文字输入，然后开关虚拟世界"""
         state = data['state']
         if state == "create":
             self.create_world()
@@ -133,6 +151,7 @@ class CodingTestClientSystem(ClientSystem):
             print self.virtualWorldComp.CameraGetPos()
 
     def create_world(self):
+        """创建虚拟世界"""
         clientApi.CreateUI(
             modConfig.ModName,
             modConfig.UIName1,
@@ -178,7 +197,7 @@ class CodingTestClientSystem(ClientSystem):
         up_vector = (0, 1, 0)
 
         if is_down == '1':
-            logger.info('[debug] Press "%s" key' % key)
+            logger.info('[debug] 按下了 %s 键' % key)
 
         pos = {
             '0': (0.235731, 1.63182, 3.46268),
@@ -345,9 +364,8 @@ class CodingTestClientSystem(ClientSystem):
             inkScale = 1.38
             data['motionX'] *= inkScale
             data['motionZ'] *= inkScale
-            logger.info('[debug] inkScale: %s' % inkScale)
+            # logger.info('[debug] inkScale: %s' % inkScale)
 
-        # todo 铁丝网 下落的瞬移坐标不够丝滑
         if blockName == 'othniel:iron_mesh' and self.SquidSwitch:
             # 铁丝网
             logger.info('[suc] 站在铁丝网上，客户端事件')
@@ -367,10 +385,16 @@ class CodingTestClientSystem(ClientSystem):
             self.ReturnToServer({'operation': 'SquidSwitch',
                                  'SquidSwitch': False})
 
+    def on_entity_inside(self, data):
+        """监测到玩家碰撞箱在方块中则触发"""
+        # entityId = data['entityId']
+        # print data
+        if self.player_moving and self.SquidSwitch:
+            comp.CreateActorMotion(data['entityId']).SetMotion((0, 0.3, 0))
+
     def Shoot(self):
         """射击主逻辑"""
         # todo 如果连点发射键则会比原定的发射速度更快。需要设置时间锁
-        # todo 射击按钮连点则会突破射速限制
         # todo 前半段射击无散射，后半段才会有散射
         playerId = clientApi.GetLocalPlayerId()
         if self.CanShoot:
@@ -386,7 +410,7 @@ class CodingTestClientSystem(ClientSystem):
                                  'Dir': Dir})
 
     def OnHit(self, data):
-        # print data
+        # 检测生物受到伤害
         playerId = data['srcId']
 
         if data['targetId'] != '-1':
@@ -400,7 +424,7 @@ class CodingTestClientSystem(ClientSystem):
             self.create_sfx(pos, 'hit_blue')
         # if data['targetId'] == '-1':
         #     logger.info('[error] No entity hit')
-            # comp.CreateCustomAudio(playerId).PlayCustomMusic()
+        # comp.CreateCustomAudio(playerId).PlayCustomMusic()
 
     def Anim1D(self):
         # logger.info('[debug] 启动Anim1D')
@@ -428,17 +452,15 @@ class CodingTestClientSystem(ClientSystem):
         modelId = PlayerModel.GetModelId()
         PlayerModel.ModelPlayAni(modelId, "idle", True, False)
 
-    # todo 相机动画
     def camera_animation(self, start_pos=0, end_pos=1, total_time=3, divided=10):
         """
-        相机动画函数
+        todo 相机动画函数
         :param start_pos: 起始位置
         :param end_pos: 结束位置
         :param total_time: 总时长
         :param divided: 细分次数
         :return:
         """
-
         # 内置参数
         current_time = 0
         step = (end_pos - start_pos) / divided
@@ -457,6 +479,14 @@ class CodingTestClientSystem(ClientSystem):
 
     def camera_run(self, x, y, z):
         logger.info('[suc] %s %s %s' % (x, y, z))
+
+    def set_moving(self):
+        # print 'is moving'
+        self.player_moving = True
+
+    def set_moving_false(self):
+        # print 'stop moving'
+        self.player_moving = False
 
     # 监听引擎ScriptTickClientEvent事件，引擎会执行该tick回调，1秒钟30帧
     def OnTickClient(self):

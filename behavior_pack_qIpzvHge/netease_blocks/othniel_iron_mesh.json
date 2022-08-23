@@ -34,6 +34,9 @@
                     ]
                 }
             },
+            "netease:on_stand_on": {
+                "send_python_event": true
+            },
             "netease:pathable": {
                 "value": true
             },
@@ -42,9 +45,6 @@
             },
             "netease:solid": {
                 "value": false
-            },
-            "netease:on_stand_on": {
-                "send_python_event": true
             }
         },
         "description": {

@@ -17,7 +17,7 @@ class CodingTestServerSystem(ServerSystem):
         self.ListenEvents()
         self.SquidSwitch = False
         self.random_range = True
-        self.ShootRange = None
+        self.shoot_range = None
         self.shoot_gravity = 1
         self.shoot_pit = -20
         self.shoot_power = 3.8
@@ -30,8 +30,6 @@ class CodingTestServerSystem(ServerSystem):
 
         self.ListenForEvent(serverApi.GetEngineNamespace(), serverApi.GetEngineSystemName(),
                             'OnStandOnBlockServerEvent', self, self.OnStandBlock)
-        self.ListenForEvent(serverApi.GetEngineNamespace(), serverApi.GetEngineSystemName(),
-                            'JumpAnimBeginServerEvent', self, self.OnJump)
         self.ListenForEvent(serverApi.GetEngineNamespace(), serverApi.GetEngineSystemName(),
                             "ProjectileDoHitEffectEvent", self, self.on_projectile_do_hit)
         self.ListenForEvent(serverApi.GetEngineNamespace(), serverApi.GetEngineSystemName(),
@@ -91,8 +89,6 @@ class CodingTestServerSystem(ServerSystem):
         # 临时注册方块事件
         serverApi.GetEngineCompFactory().CreateBlockInfo(serverApi.GetLevelId()).RegisterOnStandOn(
             "minecraft:wool", True)
-        # serverApi.GetEngineCompFactory().CreateBlockInfo(serverApi.GetLevelId()).RegisterOnStandOn(
-        #     "othniel:iron_mesh", True)
 
     def ServerChatEvent(self, data):
         temp_data = self.CreateEventData()
@@ -106,11 +102,15 @@ class CodingTestServerSystem(ServerSystem):
         elif message == 'get pos':
             temp_data = 'GetPos'
         if message == 'close':
+            # 关闭随机散射——测试用
             self.random_range = False
             print self.random_range
         if message == 'open':
+            # 打开随机散射
             self.random_range = True
             print self.random_range
+        if message == 'testing':
+            logger.info('[suc] 只是一个测试')
 
     def on_projectile_do_hit(self, data):
         """获取子弹落点坐标"""
@@ -118,16 +118,28 @@ class CodingTestServerSystem(ServerSystem):
         block_posX = data['blockPosX']
         block_posY = data['blockPosY']
         block_posZ = data['blockPosZ']
-        # todo:设置子弹溅射范围变大 将setblock替换为API接口
-        # comp.CreateCommand(serverApi.GetLevelId()).SetCommand(
-        #     '/setblock %s %s %s othniel:testing_block' % (block_posX, block_posY, block_posZ))
+        # todo 测试悬空状态下，是否会多出来多余的部分
         blockDict = {
             'name': 'othniel:testing_block',
             'aux': 0
         }
-        serverApi.GetEngineCompFactory().CreateBlockInfo(serverApi.GetLevelId()).SetBlockNew(
-            (block_posX, block_posY, block_posZ), blockDict, 0, 0)
+        # 控制溅射范围 为九宫格形状
+        block_pos_dict = {
+            (block_posX, block_posY, block_posZ),
+            (block_posX + 1, block_posY, block_posZ),
+            (block_posX + -1, block_posY, block_posZ),
+            (block_posX, block_posY, block_posZ + 1),
+            (block_posX, block_posY, block_posZ + -1),
+            (block_posX + 1, block_posY, block_posZ + 1),
+            (block_posX + 1, block_posY, block_posZ + -1),
+            (block_posX + -1, block_posY, block_posZ + 1),
+            (block_posX + -1, block_posY, block_posZ + -1),
+        }
+        # 遍历坐标字典并执行
+        for pos in block_pos_dict:
+            serverApi.GetEngineCompFactory().CreateBlockInfo(serverApi.GetLevelId()).SetBlockNew(pos, blockDict, 0, 0)
 
+        # 击中的同时删除实体
         bulletId = data['id']
         self.DestroyEntity(bulletId)
         # 传递告诉客户端，播放击中音效
@@ -152,7 +164,7 @@ class CodingTestServerSystem(ServerSystem):
         """
         # logger.info('[debug] ServerGet Squid up')
         comp.CreateModel(playerId).SetModel('Player_steve')
-        comp.CreateCollisionBox(playerId).SetSize((0.88, 1.32))
+        comp.CreateCollisionBox(playerId).SetSize((0.8, 1.82))
         self.SquidSwitch = False
 
     def OnStandBlock(self, data):
@@ -164,7 +176,7 @@ class CodingTestServerSystem(ServerSystem):
         """如果站在铁丝网上则往下瞬移"""
         playerId = data['playerId']
         foot_pos = data['foot_pos']
-        offset = 0.5
+        offset = 0.2
 
         x = foot_pos[0]
         y = foot_pos[1] - offset
@@ -175,9 +187,9 @@ class CodingTestServerSystem(ServerSystem):
 
     def GetPlayerId(self, data):
         logger.info('[warn] 获取玩家ID:%s' % data)
-        self.ModelInit(data)
 
     def Shoot(self, data):
+        # todo 溅射墨水
         # logger.info('[debug] %s' % data)
         playerId = data['playerId']
 
@@ -196,41 +208,49 @@ class CodingTestServerSystem(ServerSystem):
 
         DirList = serverApi.GetDirFromRot(RotList)
 
-        # 提取玩家坐标tuple
-        PosX = PosList[0] + DirList[0]
-        PosY = PosList[1] + DirList[1] - 0.3
-        PosZ = PosList[2] + DirList[2]
+        # 提取玩家坐标储存为Dir向量
+        DirX = PosList[0] + DirList[0]
+        DirY = PosList[1] + DirList[1] - 0.3
+        DirZ = PosList[2] + DirList[2]
 
         if not self.random_range:
             # 如果关闭随机散射，改为极限俯仰角
-            self.ShootRange = serverApi.GetDirFromRot((
+            self.shoot_range = serverApi.GetDirFromRot((
                 RotP + self.shoot_pit,
                 RotY))
         if self.random_range:
             # 打开随机散射
-            self.ShootRange = serverApi.GetDirFromRot((
+            self.shoot_range = serverApi.GetDirFromRot((
                 RotP + random_pit + self.shoot_pit + -5,
                 RotY + random_yaw))
+            # todo 射击喷溅
+            self.shoot_splat = serverApi.GetDirFromRot((
+                random.uniform(-5, 5) + RotP,
+                random.uniform(-10, 10) + RotY
+            ))
+            param = {
+                'position': (DirX, DirY, DirZ),
+                'direction': self.shoot_splat,
+                'power': self.shoot_power,
+                'gravity': self.shoot_gravity,
+                'damage': 0
+            }
+            # 发射喷溅墨水
+            comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
+                playerId, 'minecraft:snowball', param
+            )
 
         # 射击参数
         param = {
-            'position': (PosX, PosY, PosZ),
-            'direction': self.ShootRange,
+            'position': (DirX, DirY, DirZ),
+            'direction': self.shoot_range,
             'power': self.shoot_power,
             'gravity': self.shoot_gravity,
             'damage': 36
         }
         comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
-            playerId, "minecraft:arrow", param)
+            playerId, "othniel:entity", param)
         logger.info('[debug] 强度:%s，重力：%s，伤害：%s' % (param['power'], param['gravity'], param['damage']))
-
-    def OnJump(self, data):
-        # print data
-        pass
-
-    def ModelInit(self, data):
-        # serverApi.GetEngineCompFactory().CreateModel(data).SetModel('datiangou')
-        pass
 
     # ScriptTickServerEvent的回调函数，会在引擎tick的时候调用，1秒30帧（被调用30次）
     def OnTickServer(self):

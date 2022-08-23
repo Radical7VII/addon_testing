@@ -24,6 +24,7 @@
 
                     }
                 },
+                "particle": "iconcrack",
                 "power": 0.5,
                 "reflect_on_hurt": true,
                 "semi_random_diff_damage": false,

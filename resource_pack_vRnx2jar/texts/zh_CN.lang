@@ -1,4 +1,5 @@
 item.othniel:testing_item.name=测试物品
-tile.othniel:testing_block.name=测试用方块
+tile.othniel:testing_block.name=墨水测试方块
 entity.othniel:entity.name=测试箭
 tile.othniel:iron_mesh.name=铁丝网
+tile.othniel:ink_wall.name=墨水墙
