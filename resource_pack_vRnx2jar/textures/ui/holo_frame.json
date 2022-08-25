@@ -1,0 +1,536 @@
+{
+    "frames": [
+        {
+            "filename": "ren_000.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_001.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_002.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_003.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_004.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_005.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_006.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_007.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_008.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_009.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_010.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_011.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_012.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_013.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_014.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_015.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_016.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_017.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_018.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "ren_019.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    ],
+    "meta": {
+        "app": "https://www.codeandweb.com/texturepacker",
+        "format": "RGBA8888",
+        "image": "holo_frame.png",
+        "scale": "1",
+        "size": {
+            "h": 968,
+            "w": 1805
+        },
+        "smartupdate": "$TexturePacker:SmartUpdate:d7b3ccc11d2135b04cf84f2b7c677be5:e382c1f33b48c605029107c6b5cc8ca6:d197576f10bbfd4c31810ea2afc5860f$",
+        "version": "1.0"
+    }
+}

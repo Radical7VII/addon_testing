@@ -21,6 +21,8 @@ class CodingTestServerSystem(ServerSystem):
         self.shoot_gravity = 1
         self.shoot_pit = -20
         self.shoot_power = 3.8
+        self.bullet_count = 100
+        self.can_shoot = None
 
     def ListenEvents(self):
         self.ListenForEvent(modConfig.ModName, modConfig.ClientSystemName,
@@ -190,11 +192,15 @@ class CodingTestServerSystem(ServerSystem):
 
     def Shoot(self, data):
         # todo 溅射墨水
-        # logger.info('[debug] %s' % data)
+        # todo 子弹数量
         playerId = data['playerId']
 
         PosList = list(data['Pos'])
-
+        # 子弹数量减少
+        self.bullet_count -= 3
+        # 如果子弹数量小于0的时候，锁定板机
+        if self.bullet_count <= 0:
+            self.can_shoot = False
         # 创建随机数。Pit对应垂直，Yaw对应左右。
         random_pit = random.uniform(-5, 5)
         random_yaw = random.uniform(-10, 10)
@@ -236,9 +242,10 @@ class CodingTestServerSystem(ServerSystem):
                 'damage': 0
             }
             # 发射喷溅墨水
-            comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
-                playerId, 'minecraft:snowball', param
-            )
+            if self.can_shoot:
+                comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
+                    playerId, 'minecraft:snowball', param
+                )
 
         # 射击参数
         param = {
@@ -248,9 +255,10 @@ class CodingTestServerSystem(ServerSystem):
             'gravity': self.shoot_gravity,
             'damage': 36
         }
-        comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
-            playerId, "othniel:entity", param)
-        logger.info('[debug] 强度:%s，重力：%s，伤害：%s' % (param['power'], param['gravity'], param['damage']))
+        if self.can_shoot:
+            comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
+                playerId, "othniel:entity", param)
+            logger.info('[debug] 强度:%s，重力：%s，伤害：%s' % (param['power'], param['gravity'], param['damage']))
 
     # ScriptTickServerEvent的回调函数，会在引擎tick的时候调用，1秒30帧（被调用30次）
     def OnTickServer(self):

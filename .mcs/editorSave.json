@@ -16,6 +16,14 @@
                 "D:\\MCStudioDownload\\work\\sdzxcf@126.com\\Cpp\\AddOn\\78f4eba6de694af88c4f52cd10d8d308\\resource_pack_vRnx2jar\\ui\\ui1.json": [
                     "/main",
                     "/main/image"
+                ],
+                "F:\\GithubRepo\\addon_testing\\resource_pack_vRnx2jar\\ui\\ui0.json": [
+                    "/main",
+                    "/main/control"
+                ],
+                "F:\\GithubRepo\\addon_testing\\resource_pack_vRnx2jar\\ui\\ui1.json": [
+                    "/main",
+                    "/main/panel"
                 ]
             }
         },

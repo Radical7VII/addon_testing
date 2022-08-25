@@ -4,6 +4,9 @@
         "othniel:brah": {
             "textures": "textures/blocks/brah"
         },
+        "othniel:dirt": {
+            "textures": "textures/blocks/dirt"
+        },
         "othniel:ink_wall": {
             "textures": "textures/blocks/ink_wall"
         },

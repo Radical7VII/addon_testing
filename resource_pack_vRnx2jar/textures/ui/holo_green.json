@@ -1,0 +1,536 @@
+{
+    "frames": [
+        {
+            "filename": "half_pixel_000.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_001.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_002.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_003.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_004.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 0
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_005.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_006.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_007.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_008.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_009.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 242
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_010.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_011.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_012.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_013.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_014.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 484
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_015.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_016.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 361,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_017.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 722,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_018.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1083,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        {
+            "filename": "half_pixel_019.png",
+            "frame": {
+                "h": 242,
+                "w": 361,
+                "x": 1444,
+                "y": 726
+            },
+            "rotated": false,
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "sourceSize": {
+                "h": 242,
+                "w": 361
+            },
+            "spriteSourceSize": {
+                "h": 242,
+                "w": 361,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    ],
+    "meta": {
+        "app": "https://www.codeandweb.com/texturepacker",
+        "format": "RGBA8888",
+        "image": "holo_green.png",
+        "scale": "1",
+        "size": {
+            "h": 968,
+            "w": 1805
+        },
+        "smartupdate": "$TexturePacker:SmartUpdate:9f446eeff4a7b1112d99c0d5975545ab:88ac3f05105fb08cfe1e5015c2f3bc48:2d726f5ef5b71984d8ae674712d82474$",
+        "version": "1.0"
+    }
+}

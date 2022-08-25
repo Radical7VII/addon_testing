@@ -18,7 +18,7 @@ class CodingTestClientSystem(ClientSystem):
         self.virtualWorldComp = comp.CreateVirtualWorld(clientApi.GetLevelId())
         self.RepeatShoot = None
         self.SquidSwitch = None
-        self.CanShoot = True
+        self.can_shoot = True
         self.objId = None
         self.corId = None
         self.shadow = None
@@ -26,6 +26,7 @@ class CodingTestClientSystem(ClientSystem):
         self.shoot_power = 3.9
         self.shoot_gravity = 1
         self.player_moving = False
+        self.bullet_count = 100
 
     def ListenEvents(self):
         """监听网易事件"""
@@ -65,30 +66,27 @@ class CodingTestClientSystem(ClientSystem):
         self.ModelInit()
         self.UiInit()
         # 设置相机锚点
-        clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetCameraAnchor((0, 0.46, 0))
+        # clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetCameraAnchor((0, 0.46, 0))
         # 设置相机偏移
-        clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetCameraOffset((0, 0.46, 0))
-        clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetFov(63)
+        # clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetCameraOffset((0, 0.46, 0))
+        # clientApi.GetEngineCompFactory().CreateCamera(clientApi.GetLevelId()).SetFov(63)
 
-    def create_sfx(self, pos, sfx):
+    def create_sfx(self, pos, rot, scale, sfx):
         """
         创建序列帧特效
+        :param rot: 特效创建的方向
         :param pos: 特效创建位置
         :param sfx: 特效名称
         :return:
         """
-        frameEntityId = self.CreateEngineSfxFromEditor("effects/%s.json" % sfx)
-
-        frameAniTransComp = clientApi.GetEngineCompFactory().CreateFrameAniTrans(frameEntityId)
-        frameAniTransComp.SetPos(pos)
-        frameAniTransComp.SetScale((1, 1, 1))
-
-        frameAniControlComp = clientApi.GetEngineCompFactory().CreateFrameAniControl(frameEntityId)
-        frameAniControlComp.SetUsePointFiltering(True)
-        print frameAniControlComp.Play()
-        # return frameAniControlComp.Play()
-        # 停止序列帧
-        # comp.CreateGame(clientApi.GetLevelId()).AddTimer(0.1, clientApi.GetEngineCompFactory().CreateFrameAniControl(frameEntityId).Stop())
+        holograph_id = self.CreateEngineSfxFromEditor(sfx)
+        logger.info('[warn] 创建序列帧特效 %s' % holograph_id)
+        holograph_anim_trans = clientApi.GetEngineCompFactory().CreateFrameAniTrans(holograph_id)
+        holograph_anim_trans.SetPos(pos)
+        holograph_anim_trans.SetRot(rot)
+        holograph_anim_trans.SetScale(scale)
+        holograph_anim_ctrl = clientApi.GetEngineCompFactory().CreateFrameAniControl(holograph_id)
+        holograph_anim_ctrl.Play()
 
     def removeSfx(self, frameEntityId):
         self.DestroyEntity(frameEntityId)
@@ -99,12 +97,13 @@ class CodingTestClientSystem(ClientSystem):
         # playerModel
         # Player模型comp
         playerId = clientApi.GetLocalPlayerId()
-        PlayerModel = clientApi.GetEngineCompFactory().CreateModel(playerId)
-        PlayerModel.SetModel('Player_steve')
+        player_model = clientApi.GetEngineCompFactory().CreateModel(playerId)
+        player_model.SetModel('Player_steve')
+        player_model.SetEntityOpacity(1)
 
         # 动画
-        modelId = PlayerModel.GetModelId()
-        PlayerModel.ModelPlayAni(modelId, "idle", True, False)
+        modelId = player_model.GetModelId()
+        player_model.ModelPlayAni(modelId, "idle", True, False)
         # clientApi.GetEngineCompFactory().CreateModel(playerId).SetFreeModelScale(modelId, 0.483, 0.483, 0.483)
 
         # 把名称为gun的骨骼模型挂接到modelId为11的模型的rightHand骨骼上
@@ -118,18 +117,26 @@ class CodingTestClientSystem(ClientSystem):
         """UI初始化"""
         logger.info('[warn] UI init')
         playerId = clientApi.GetLocalPlayerId()
-        # 创建一个绑定在玩家头顶的UI
-        print clientApi.RegisterUI(modConfig.ModName, modConfig.UIName, modConfig.UICls, 'ui0.main')
-        print clientApi.CreateUI(
+        # 创建一个准星
+        clientApi.RegisterUI(modConfig.ModName, modConfig.UIName, modConfig.UICls, 'ui0.main')
+        clientApi.CreateUI(
             modConfig.ModName,
             modConfig.UIName,
-            {"isHud": 1
-             # "bindEntityId": playerId,
-             # "bindOffset": (0, 1, 0),
-             # "autoScale": 1
-             }
+            {"isHud": 1}
         )
-        clientApi.RegisterUI(modConfig.ModName, modConfig.UIName1, modConfig.UICls, 'ui1.main')
+
+        # 创建一个跟随玩家的UI
+        clientApi.RegisterUI(modConfig.ModName, modConfig.UIName1, modConfig.UICls1, 'ui1.main')
+        # clientApi.CreateUI(
+        #     modConfig.ModName,
+        #     modConfig.UIName1,
+        #     {
+        #         "isHud": 1,
+        #         "bindEntityId": playerId,
+        #         # 这里的坐标是世界坐标
+        #         "bindOffset": (3, 0, 0)
+        #     }
+        # )
 
     def ReturnToServer(self, args):
         """服务器回调封装"""
@@ -308,7 +315,7 @@ class CodingTestClientSystem(ClientSystem):
             self.SquidSwitch = True
         elif key == '67' and is_down == '0':
             logger.info('[debug] 鱿鱼 up')
-            self.CanShoot = True
+            self.can_shoot = True
             self.ReturnToServer({'operation': 'notSquid'})
             self.SquidSwitch = False
             comp.CreateModel(playerId).ShowModel(
@@ -337,7 +344,7 @@ class CodingTestClientSystem(ClientSystem):
         blockName = data['blockName']
         # logger.info('[debug] [%s]站在方块[%s]上' % (entityId, blockName))
         if self.SquidSwitch and data['entityId'] == playerId:
-            self.CanShoot = False
+            self.can_shoot = False
 
         # 隐藏鱿鱼模型
         if self.SquidSwitch and blockName == 'othniel:testing_block' and data['entityId'] == playerId:
@@ -377,7 +384,7 @@ class CodingTestClientSystem(ClientSystem):
         # 非墨水方块则还原
         if blockName != ['othniel:testing_block', 'othniel:iron_mesh']:
             # 显示模型
-            self.CanShoot = True
+            self.can_shoot = True
             comp.CreateModel(playerId).ShowModel(
                 clientApi.GetEngineCompFactory().CreateModel(playerId).GetModelId()
             )
@@ -394,10 +401,15 @@ class CodingTestClientSystem(ClientSystem):
 
     def Shoot(self):
         """射击主逻辑"""
+        self.bullet_count -= 3
+        if self.bullet_count <= 0:
+            self.can_shoot = False
+        else:
+            self.can_shoot = True
         # todo 如果连点发射键则会比原定的发射速度更快。需要设置时间锁
         # todo 前半段射击无散射，后半段才会有散射
         playerId = clientApi.GetLocalPlayerId()
-        if self.CanShoot:
+        if self.can_shoot:
             # 播放开枪音效
             # logger.info('[debug] PlaySound %s')
             comp.CreateCustomAudio(playerId).PlayCustomMusic("splt:bullet_shoot", (0, 0, 0), 1, 1, False, playerId)
@@ -442,15 +454,15 @@ class CodingTestClientSystem(ClientSystem):
     def OnWalkBegin(self, data):
         """识别玩家走路时"""
         playerId = clientApi.GetLocalPlayerId()
-        PlayerModel = clientApi.GetEngineCompFactory().CreateModel(playerId)
-        modelId = PlayerModel.GetModelId()
-        PlayerModel.ModelPlayAni(modelId, "walk", True, False)
+        player_model = clientApi.GetEngineCompFactory().CreateModel(playerId)
+        modelId = player_model.GetModelId()
+        player_model.ModelPlayAni(modelId, "walk", True, False)
 
     def OnWalkEnd(self, data):
         playerId = clientApi.GetLocalPlayerId()
-        PlayerModel = clientApi.GetEngineCompFactory().CreateModel(playerId)
-        modelId = PlayerModel.GetModelId()
-        PlayerModel.ModelPlayAni(modelId, "idle", True, False)
+        player_model = clientApi.GetEngineCompFactory().CreateModel(playerId)
+        modelId = player_model.GetModelId()
+        player_model.ModelPlayAni(modelId, "idle", True, False)
 
     def camera_animation(self, start_pos=0, end_pos=1, total_time=3, divided=10):
         """
@@ -487,6 +499,15 @@ class CodingTestClientSystem(ClientSystem):
     def set_moving_false(self):
         # print 'stop moving'
         self.player_moving = False
+
+    def coding_test(self):
+        logger.info('[suc] 触发客户端事件')
+
+    def ui_up(self):
+        print 'up'
+
+    def ui_down(self):
+        print 'down'
 
     # 监听引擎ScriptTickClientEvent事件，引擎会执行该tick回调，1秒钟30帧
     def OnTickClient(self):

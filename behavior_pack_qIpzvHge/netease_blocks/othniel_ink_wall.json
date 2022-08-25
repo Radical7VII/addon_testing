@@ -1,0 +1,52 @@
+{
+    "format_version": "1.11.0",
+    "minecraft:block": {
+        "components": {
+            "minecraft:block_light_absorption": {
+                "value": 0
+            },
+            "netease:aabb": {
+                "clip": {
+                    "max": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.9
+                    ]
+                },
+                "collision": {
+                    "max": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "min": [
+                        0.0,
+                        0.0,
+                        0.9
+                    ]
+                }
+            },
+            "netease:face_directional": {
+                "type": "direction"
+            },
+            "netease:on_stand_on": {
+                "send_python_event": true
+            },
+            "netease:on_entity_inside": {
+                "send_python_event": true
+            },
+            "netease:solid": {
+                "value": false
+            }
+        },
+        "description": {
+            "identifier": "othniel:ink_wall",
+            "register_to_creative_menu": true
+        }
+    }
+}

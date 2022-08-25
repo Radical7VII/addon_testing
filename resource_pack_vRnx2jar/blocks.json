@@ -4,11 +4,15 @@
         1,
         0
     ],
+    "othniel:holo": {
+        "textures": "othniel:dirt"
+    },
     "othniel:ink_wall": {
         "netease_model": "othniel:ink_wall",
         "textures": "othniel:ink_wall"
     },
     "othniel:iron_mesh": {
+        "netease_model": "othniel:iron_mesh",
         "textures": "othniel:iron_mesh"
     },
     "othniel:testing_block": {

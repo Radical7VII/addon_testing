@@ -2,33 +2,173 @@
    "main" : {
       "controls" : [
          {
-            "image" : {
-               "clip_direction" : "left",
-               "clip_ratio" : 0.0,
+            "aim" : {
+               "controls" : [
+                  {
+                     "aim_range" : {
+                        "alpha" : 0.480,
+                        "clip_direction" : "left",
+                        "clip_ratio" : 0.0,
+                        "color" : [ 1.0, 1.0, 1.0 ],
+                        "layer" : 1,
+                        "max_size" : [ 0, 0 ],
+                        "min_size" : [ 0, 0 ],
+                        "offset" : [ 0, 0 ],
+                        "size" : [ 54, 36 ],
+                        "texture" : "textures/ui/SplatShoot_Aim",
+                        "type" : "image",
+                        "uv" : [ 0, 0 ],
+                        "uv_size" : [ 0, 0 ]
+                     }
+                  },
+                  {
+                     "aim_center" : {
+                        "clip_direction" : "left",
+                        "clip_ratio" : 0.0,
+                        "layer" : 1,
+                        "max_size" : [ 0, 0 ],
+                        "min_size" : [ 0, 0 ],
+                        "offset" : [ 0, 0 ],
+                        "size" : [ 35, "100.0%x+-10.0px" ],
+                        "texture" : "textures/ui/aim_default",
+                        "type" : "image",
+                        "uv" : [ 0, 0 ],
+                        "uv_size" : [ 0, 0 ]
+                     }
+                  }
+               ],
                "layer" : 1,
                "max_size" : [ 0, 0 ],
                "min_size" : [ 0, 0 ],
                "offset" : [ 0, 0 ],
-               "size" : [ 54, 36 ],
-               "texture" : "textures/ui/SplatShoot_Aim",
-               "type" : "image",
-               "uv" : [ 0, 0 ],
-               "uv_size" : [ 0, 0 ]
+               "size" : [ "0.0%+1920.0px", "0.0%+1080.0px" ],
+               "type" : "panel"
             }
          },
          {
-            "image(0)" : {
-               "clip_direction" : "left",
-               "clip_ratio" : 0.0,
+            "control" : {
+               "controls" : [
+                  {
+                     "shoot@common.button" : {
+                        "$control_alpha" : 1.0,
+                        "$default_texture" : "textures/ui/shoot",
+                        "$hover_texture" : "textures/netease/common/button/hover",
+                        "$is_new_nine_slice" : false,
+                        "$label_color" : [ 1, 1, 1 ],
+                        "$label_font_scale_factor" : 1.0,
+                        "$label_font_size" : "large",
+                        "$label_layer" : 3,
+                        "$label_offset" : [ 0, 0 ],
+                        "$label_text" : "",
+                        "$nine_slice_buttom" : 0,
+                        "$nine_slice_left" : 0,
+                        "$nine_slice_right" : 0,
+                        "$nine_slice_top" : 0,
+                        "$nineslice_size" : [ 0, 0, 0, 0 ],
+                        "$pressed_button_name" : "%netease_editor_template_namespace.click",
+                        "$pressed_texture" : "textures/ui/shoot_pressed",
+                        "$texture_layer" : 2,
+                        "alpha" : 0.50,
+                        "anchor_from" : "bottom_right",
+                        "bindings" : [
+                           {
+                              "binding_collection_name" : "",
+                              "binding_condition" : "always_when_visible",
+                              "binding_type" : "collection_details"
+                           }
+                        ],
+                        "button_mappings" : [],
+                        "controls" : [
+                           {
+                              "default@netease_editor_template_namespace.default" : {}
+                           },
+                           {
+                              "hover@netease_editor_template_namespace.hover" : {}
+                           },
+                           {
+                              "pressed@netease_editor_template_namespace.pressed" : {}
+                           },
+                           {
+                              "button_label@netease_editor_template_namespace.button_label" : {}
+                           }
+                        ],
+                        "default_control" : "default",
+                        "hover_control" : "hover",
+                        "is_handle_button_move_event" : true,
+                        "layer" : 2,
+                        "max_size" : [ 0, 0 ],
+                        "min_size" : [ 0, 0 ],
+                        "offset" : [ -79.50, -101.50 ],
+                        "pressed_control" : "pressed",
+                        "propagate_alpha" : true,
+                        "size" : [ 60, 60 ],
+                        "type" : "button"
+                     }
+                  },
+                  {
+                     "squid@common.button" : {
+                        "$control_alpha" : 1.0,
+                        "$default_texture" : "textures/ui/squid",
+                        "$hover_texture" : "textures/netease/common/button/hover",
+                        "$is_new_nine_slice" : false,
+                        "$label_color" : [ 1, 1, 1 ],
+                        "$label_font_scale_factor" : 1.0,
+                        "$label_font_size" : "large",
+                        "$label_layer" : 3,
+                        "$label_offset" : [ 0, 0 ],
+                        "$label_text" : "",
+                        "$nine_slice_buttom" : 0,
+                        "$nine_slice_left" : 0,
+                        "$nine_slice_right" : 0,
+                        "$nine_slice_top" : 0,
+                        "$nineslice_size" : [ 0, 0, 0, 0 ],
+                        "$pressed_button_name" : "%netease_editor_template_namespace.click",
+                        "$pressed_texture" : "textures/netease/common/button/pressed",
+                        "$texture_layer" : 2,
+                        "alpha" : 0.50,
+                        "anchor_from" : "bottom_right",
+                        "anchor_to" : "top_left",
+                        "bindings" : [
+                           {
+                              "binding_collection_name" : "",
+                              "binding_condition" : "always_when_visible",
+                              "binding_type" : "collection_details"
+                           }
+                        ],
+                        "button_mappings" : [],
+                        "controls" : [
+                           {
+                              "default@netease_editor_template_namespace.default" : {}
+                           },
+                           {
+                              "hover@netease_editor_template_namespace.hover" : {}
+                           },
+                           {
+                              "pressed@netease_editor_template_namespace.pressed" : {}
+                           },
+                           {
+                              "button_label@netease_editor_template_namespace.button_label" : {}
+                           }
+                        ],
+                        "default_control" : "default",
+                        "hover_control" : "hover",
+                        "is_handle_button_move_event" : true,
+                        "layer" : 2,
+                        "max_size" : [ 0, 0 ],
+                        "min_size" : [ 0, 0 ],
+                        "offset" : [ -118.0, -65.0 ],
+                        "pressed_control" : "pressed",
+                        "propagate_alpha" : true,
+                        "size" : [ 34, 34 ],
+                        "type" : "button"
+                     }
+                  }
+               ],
                "layer" : 1,
                "max_size" : [ 0, 0 ],
                "min_size" : [ 0, 0 ],
                "offset" : [ 0, 0 ],
-               "size" : [ 35, "100.0%x+-10.0px" ],
-               "texture" : "textures/ui/aim_default",
-               "type" : "image",
-               "uv" : [ 0, 0 ],
-               "uv_size" : [ 0, 0 ]
+               "type" : "panel"
             }
          }
       ],
