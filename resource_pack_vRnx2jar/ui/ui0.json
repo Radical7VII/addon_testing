@@ -170,35 +170,6 @@
                "offset" : [ 0, 0 ],
                "type" : "panel"
             }
-         },
-         {
-            "progress_bar" : {
-               "$clip_direction" : "left",
-               "$clip_ratio" : 0.0,
-               "$is_new_nine_slice" : false,
-               "$nine_slice_buttom" : 0,
-               "$nine_slice_left" : 0,
-               "$nine_slice_right" : 0,
-               "$nine_slice_top" : 0,
-               "$nineslice_size" : [ 4.0, 4.0, 4.0, 4.0 ],
-               "$progress_bar_empty_texture" : "textures/ui/empty_progress_bar",
-               "$progress_bar_filled_texture" : "textures/ui/filled_progress_bar",
-               "anchor_from" : "top_right",
-               "controls" : [
-                  {
-                     "empty_progress_bar@netease_editor_template_namespace.empty_progress_bar" : {}
-                  },
-                  {
-                     "filled_progress_bar@netease_editor_template_namespace.filled_progress_bar" : {}
-                  }
-               ],
-               "layer" : 8,
-               "max_size" : [ 0, 0 ],
-               "min_size" : [ 0, 0 ],
-               "offset" : [ -97.0, 19.0 ],
-               "size" : [ 165, 23 ],
-               "type" : "panel"
-            }
          }
       ],
       "type" : "screen"
