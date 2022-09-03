@@ -258,6 +258,7 @@ class CodingTestServerSystem(ServerSystem):
         if self.can_shoot:
             comp.CreateProjectile(serverApi.GetLevelId()).CreateProjectileEntity(
                 playerId, "othniel:entity", param)
+            logger.info('[debug] 射击！！！')
             logger.info('[debug] 强度:%s，重力：%s，伤害：%s' % (param['power'], param['gravity'], param['damage']))
 
     # ScriptTickServerEvent的回调函数，会在引擎tick的时候调用，1秒30帧（被调用30次）

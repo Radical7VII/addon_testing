@@ -1,6 +1,6 @@
 {
     "Account": "sdzxcf@126.com",
-    "AssertCacheDir": "D:\\MCStudioDownload\\EngineAssert",
+    "AssertCacheDir": "F:\\MCStudioDownload\\EngineAssert",
     "BlockNums": [
         0,
         0
@@ -14,34 +14,34 @@
     "CreateVersion": "2.2.0.97771",
     "DCWebUrl": "https://x19apigatewayexpr.nie.netease.com",
     "EditAddOnPaths": [
-
+        "F:\\sutao_file\\GithubRepo\\addon_testing"
     ],
-    "EditLogFilePath": "D:\\MCStudioDownload\\work\\editor\\edit.log",
+    "EditLogFilePath": "F:\\MCStudioDownload\\work\\editor\\edit.log",
     "EditMaterialPaths": [
 
     ],
-    "EditName": "代码测试",
-    "EditType": 2,
-    "EditVersion": "2.2.0.118322",
-    "EditorResourcePackPath": "D:\\Program Files (x86)\\Netease\\MCStudio\\data\\inner_res",
+    "EditName": "addon_testing",
+    "EditType": 4,
+    "EditVersion": "2.2.0.136033",
+    "EditorResourcePackPath": "F:\\MCStudio\\data\\inner_res",
     "ElkUrl": "https://x19mclexpr.nie.netease.com/client-log",
     "GameType": 1,
-    "Id": "78f4eba6de694af88c4f52cd10d8d308",
+    "Id": "42c3c7a1607d4c9c8a5f930b41c439db",
     "IsMap": false,
-    "NewEditCount": 29,
+    "NewEditCount": 30,
     "OldComponents": [
 
     ],
     "OldEditCount": 0,
-    "SaveBackAddOnPath": "D:\\MCStudioDownload\\work\\sdzxcf@126.com\\Cpp\\AddOn\\78f4eba6de694af88c4f52cd10d8d308",
+    "SaveBackAddOnPath": "F:\\MCStudioDownload\\work\\sdzxcf@126.com\\Cpp\\AddOn\\42c3c7a1607d4c9c8a5f930b41c439db",
     "SaveBackMapPath": "",
     "Seed": "",
     "ServerName": "EXPR",
     "ShowGpuDriverTips": false,
     "ShowGuide": false,
-    "Source": "空白附加包",
-    "StudioPort": 12797,
-    "StudioTempPath": "D:\\MCStudioDownload\\temp\\editorTemp",
+    "Source": "addon_testing",
+    "StudioPort": 11508,
+    "StudioTempPath": "F:\\MCStudioDownload\\temp\\editorTemp",
     "UserId": "46325",
     "UserName": "Othniel",
     "WorldType": 1

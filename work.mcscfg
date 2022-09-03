@@ -1,12 +1,12 @@
 {
-  "UID": "78f4eba6de694af88c4f52cd10d8d308",
+  "UID": "42c3c7a1607d4c9c8a5f930b41c439db",
   "Language": 0,
   "Type": 7,
-  "Versions": null,
+  "Versions": [],
   "JavaType": 8,
-  "Name": "代码测试",
-  "UpdateTime": "2022-08-21T14:39:49.8149833+08:00",
-  "IconName": "",
+  "Name": "addon_testing(1)",
+  "UpdateTime": "2022-09-03T00:13:17.5129072+08:00",
+  "IconName": null,
   "Md5": null,
   "CloudMd5": null,
   "HasEncrypt": true,
@@ -18,10 +18,15 @@
   "GameId": null,
   "VersionSubDirs": null,
   "PreComponentIds": null,
-  "IsPc": true,
+  "IsPc": false,
   "IsPreCom": false,
   "CustomWorkDir": null,
-  "ImportHistoryList": null,
+  "ImportHistoryList": [
+    {
+      "Name": "addon_testing",
+      "Date": "2022/09/03 00:13"
+    }
+  ],
   "OpenEditType": 0,
   "EditMapUID": "",
   "EditMapType": 1,
